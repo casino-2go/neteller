@@ -8,7 +8,8 @@ module Neteller
     def to_h
       {
         payeeProfile: {
-          email: @payee_profile_email
+          email: @payee_profile_email,
+          accountId: @payee_profile_account_id
         },
         transaction: {
           amount: @transaction_amount,
