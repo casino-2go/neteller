@@ -6,10 +6,8 @@ module Neteller
     end
 
     def to_h
-      {
+      result = {
         payeeProfile: {
-          email: @payee_profile_email,
-          accountId: @payee_profile_account_id
         },
         transaction: {
           amount: @transaction_amount,
@@ -18,6 +16,9 @@ module Neteller
         },
         message: @message
       }
+      result[:email] = @payee_profile_email if @payee_profile_email
+      result[:accountId] = @payee_profile_account_id if @payee_profile_account_id
+      result
     end
   end
 end
